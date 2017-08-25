@@ -28,7 +28,12 @@
 					<pushem translate="title">
 						<title>Pushem</title>
 						<children>
-							
+							<panel translate="title" module="pushem">
+								<title>Pushem::Send Push</title>
+							</panel>
+							<config translate="title" module="pushem">
+								<title>Pushem::Settings</title>
+							</config>
 						</children>
 					</pushem>
 				</children>

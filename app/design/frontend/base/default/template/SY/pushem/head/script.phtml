@@ -1,1 +1,8 @@
+<?php
+/**
+ * Pushem
+ * 
+ * @author Slava Yurthev
+ */
+?>
 <script type="text/javascript" src="https://pushem.ru/widget/loader.js?token=<?php echo $this->getToken(); ?><?php if($this->getCustomer()->isLoggedIn()): ?>&site_id=<?php echo $this->getCustomer()->getId(); ?><?php endif; ?><?php if($this->hasSegments()): ?>&segmetns=<?php echo $this->getSegments(); ?><?php endif; ?>"></script>
