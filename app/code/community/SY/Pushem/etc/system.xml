@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Pushem
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<config>
+	<tabs>
+		<pushem translate="label">
+			<label>Pushem</label>
+			<sort_order>1</sort_order>
+		</pushem>
+	</tabs>
+	<sections>
+		<pushem translate="label" module="pushem">
+			<label>Pushem::Settings</label>
+			<tab>pushem</tab>
+			<sort_order>1</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<general translate="label" module="pushem">
+					<label>Pushem::General</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>1</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>1</show_in_website>
+					<show_in_store>1</show_in_store>
+					<fields>
+						<notice translate="label" module="pushem">
+							<label>Pushem::Notice</label>
+							<frontend_type>label</frontend_type>
+							<frontend_model>pushem/adminhtml_system_config_notice</frontend_model>
+							<sort_order>1</sort_order>
+							<show_in_default>1</show_in_default>
+						</notice>
+						<active translate="label" module="pushem">
+							<label>Pushem::Active</label>
+							<frontend_type>select</frontend_type>
+							<sort_order>10</sort_order>
+							<show_in_default>1</show_in_default>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+						</active>
+						<id translate="label" module="pushem">
+							<label>Pushem::ID</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>20</sort_order>
+							<show_in_default>1</show_in_default>
+							<validate>required-entry validate-number</validate>
+						</id>
+						<api_key translate="label" module="pushem">
+							<label>Pushem::API Key</label>
+							<frontend_type>obscure</frontend_type>
+							<backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+							<sort_order>30</sort_order>
+							<show_in_default>1</show_in_default>
+							<validate>required-entry</validate>
+						</api_key>
+						<api_token translate="label" module="pushem">
+							<label>Pushem::API Token</label>
+							<frontend_type>label</frontend_type>
+							<frontend_model>pushem/adminhtml_system_config_token</frontend_model>
+							<sort_order>40</sort_order>
+							<show_in_default>1</show_in_default>
+						</api_token>
+						<segments translate="label,comment" module="pushem">
+							<label>Pushem::Segments</label>
+							<frontend_type>text</frontend_type>
+							<sort_order>50</sort_order>
+							<show_in_default>1</show_in_default>
+							<comment>Pushem::only latin, comma-separated, without spaces</comment>
+						</segments>
+					</fields>
+				</general>
+			</groups>
+		</pushem>
+	</sections>
+</config>

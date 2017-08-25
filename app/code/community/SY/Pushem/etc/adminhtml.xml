@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Pushem
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<config>
+	<acl>
+		<resources>
+			<all>
+				<title>Allow Everything</title>
+			</all>
+			<admin>
+				<children>
+					<system>
+						<children>
+							<config>
+								<children>
+									<pushem translate="title">
+										<title>Pushem</title>
+									</pushem>
+								</children>
+							</config>
+						</children>
+					</system>
+					<pushem translate="title">
+						<title>Pushem</title>
+						<children>
+							
+						</children>
+					</pushem>
+				</children>
+			</admin>
+		</resources>
+	</acl>
+	<menu>
+		<pushem translate="title" module="pushem">
+			<title>Pushem</title>
+			<sort_order>15</sort_order>
+			<children>
+				<panel translate="title" module="pushem">
+					<title>Pushem::Send Push</title>
+					<sort_order>1</sort_order>
+					<action>adminhtml/pushem_action/panel</action>
+				</panel>
+				<config translate="title" module="pushem">
+					<title>Pushem::Settings</title>
+					<sort_order>2</sort_order>
+					<action>adminhtml/system_config/edit/section/pushem</action>
+				</config>
+			</children>
+		</pushem>
+	</menu>
+</config>

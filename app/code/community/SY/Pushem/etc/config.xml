@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Pushem
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<config>
+	<modules>
+		<SY_Pushem>
+			<version>1.0.0</version>
+		</SY_Pushem>
+	</modules>
+	<global>
+		<blocks>
+			<pushem>
+				<class>SY_Pushem_Block</class>
+			</pushem>
+		</blocks>
+		<helpers>
+			<pushem>
+				<class>SY_Pushem_Helper</class>
+			</pushem>
+		</helpers>
+		<models>
+			<pushem>
+				<class>SY_Pushem_Model</class>
+			</pushem>
+		</models>
+	</global>
+	<admin>
+		<routers>
+			<adminhtml>
+				<args>
+					<modules>
+						<pushem after="Mage_Adminhtml">SY_Pushem_Adminhtml</pushem>
+					</modules>
+				</args>
+			</adminhtml>
+		</routers>
+	</admin>
+	<adminhtml>
+		<translate>
+			<modules>
+				<pushem>
+					<files>
+						<default>SY/Pushem.csv</default>
+					</files>
+				</pushem>
+			</modules>
+		</translate>
+		<events>
+			<admin_system_config_changed_section_pushem>
+				<observers>
+					<pushem_config_changed>
+						<type>singleton</type>
+						<class>pushem/observer</class>
+						<method>configChanged</method>
+					</pushem_config_changed>
+				</observers>
+			</admin_system_config_changed_section_pushem>
+		</events>
+	</adminhtml>
+	<frontend>
+		<events>
+			<core_block_abstract_to_html_after>
+				<observers>
+					<pushem_append_js>
+						<type>singleton</type>
+						<class>pushem/observer</class>
+						<method>appendJs</method>
+					</pushem_append_js>
+				</observers>
+			</core_block_abstract_to_html_after>
+		</events>
+	</frontend>
+	<default>
+		<pushem>
+			<general>
+				<api_key backend_model="adminhtml/system_config_backend_encrypted" />
+			</general>
+		</pushem>
+	</default>
+</config>

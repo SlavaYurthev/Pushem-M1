@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Pushem
+ * 
+ * @author Slava Yurthev
+ */
+-->
+<config>
+	<modules>
+		<SY_Pushem>
+			<active>true</active>
+			<codePool>community</codePool>
+		</SY_Pushem>
+	</modules>
+</config>
